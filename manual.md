@@ -11,7 +11,7 @@ No Git, o comando `git merge` é utilizado para combinar as alterações de um r
 
 Suponha que você esteja trabalhando em um ramo de funcionalidade chamado `feature-branch` e deseja mesclá-lo na sua branch principal `main`. O procedimento seria:
 
-1. **Primeiro**, verifique se você está na branch `main` (ou na branch que deseja mesclar):
+1. **Primeiro**, verifique se você está na branch `main`(ou na branch que deseja mesclar):
 
     ```bash
     git checkout main
