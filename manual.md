@@ -1,68 +1,3 @@
-# Git Command Gides
-
-## _Introdução ao Git e ao GitHub_
-
-## O que é o Git?
-
-O Git é um sistema de controle de versão distribuído amplamente utilizado por desenvolvedores para gerenciar projetos de software. Ele permite rastrear mudanças no código-fonte, colaborar com outras pessoas e reverter para versões anteriores quando necessário.
-
-### Principais características do Git
-
-- **Distribuído:** Cada usuário possui uma cópia completa do repositório.
-- **Desempenho rápido:** Operações locais são extremamente rápidas.
-- **Integridade dos dados:** Todas as mudanças são registradas de forma segura.
-- **Branching poderoso:** Permite criar e mesclar branches facilmente.
-
-## O que é o GitHub?
-
-O GitHub é uma plataforma baseada na nuvem para hospedagem de repositórios Git. Ele facilita a colaboração entre desenvolvedores, permitindo compartilhamento de código, revisão de pull requests e gerência de projetos. Além disso, o GitHub oferece diversas funcionalidades como integração com CI/CD, Wikis e Issues para rastreamento de tarefas.
-
-### Diferença entre Git e GitHub
-
-- **Git:** É uma ferramenta de controle de versão que funciona localmente.
-- **GitHub:** É uma plataforma online que utiliza Git para hospedar repositórios.
-
-## Instalação do Git
-
-### Windows
-
-1. Acesse o site oficial do Git: https://git-scm.com/.
-2. Baixe o instalador para Windows.
-3. Execute o instalador e siga as instruções, configurando opções como editor padrão e comportamento do terminal.
-
-### MacOS
-
-1. Instale o Git via [Homebrew](https://brew.sh/):
-
-   ```
-   brew install git
-   ```
-
-2. Verifique a instalação:
-
-   ```
-   git --version
-   ```
-
-### Linux
-
-1. Use o gerenciador de pacotes da sua distribuição:
-
-   - **Ubuntu/Debian:**
-
-     ```
-     sudo apt update
-     sudo apt install git
-     ```
-
-   - **Fedora:**
-
-     ```
-     sudo dnf install git
-     ```
-
-2. Confirme a instalação:
-
    ```
    git --version
    ```
@@ -90,6 +25,77 @@ git config --list
 4. Complete o cadastro e confirme o e-mail.
 
 Agora você está pronto para explorar o Git e o GitHub!
+
+## Git merge
+
+**Descrição:**  
+No Git, o comando `git merge` é utilizado para combinar as alterações de um ramo (branch) em outro. Esse comando integra o histórico de ambos os ramos e tenta unir seus conteúdos. O Git tenta mesclar as alterações automaticamente, mas, se houver conflitos, você precisará resolvê-los manualmente.
+
+### Exemplo Prático:
+
+#### 1. **Mesclar um ramo de funcionalidade na branch principal:**
+
+Suponha que você esteja trabalhando em um ramo de funcionalidade chamado `feature-branch` e deseja mesclá-lo na sua branch principal `main`. O procedimento seria:
+
+1. **Primeiro**, verifique se você está na branch `main`(ou na branch que deseja mesclar):
+
+    ```bash
+    git checkout main
+    ```
+
+2. **Em seguida**, mescle o ramo `feature-branch` na `main`:
+
+    ```bash
+    git merge feature-branch
+    ```
+
+3. O Git tentará mesclar as alterações automaticamente. Se não houver conflitos, a mesclagem será concluída com sucesso e o Git criará um novo commit, combinando as alterações dos dois ramos.
+
+#### 2. **Lidando com Conflitos:**
+Se houver alterações conflitantes entre os dois ramos, o Git não conseguirá mesclar automaticamente e marcará o arquivo como conflituoso. Você verá as marcações de conflito no arquivo, como:
+
+    
+    <<<<<<< HEAD
+    # Suas alterações no ramo atual
+    =======
+    # Alterações do ramo que está sendo mesclado
+    >>>>>>> feature-branch
+    
+
+Você precisará editar manualmente o arquivo para resolver o conflito. Após resolver os conflitos:
+
+1. **Marque o arquivo como resolvido:**
+
+    ```bash
+    git add <arquivo-conflitante>
+    ```
+
+2. **Finalize a mesclagem:**
+
+    ```bash
+    git merge --continue
+    ```
+
+#### 3. **Mesclagens Fast-Forward:**
+Se o ramo que está sendo mesclado não tiver alterações divergentes, o Git fará uma mesclagem "fast-forward", movendo o ponteiro da branch `main` diretamente para o topo da `feature-branch`. Nesse caso, o Git não cria um commit de mesclagem, pois não há necessidade.
+
+#### 4. **Abortar a Mesclagem:**
+Se você quiser cancelar a mesclagem (por exemplo, se estiver confuso ou se houver muitos conflitos difíceis de resolver), pode abortá-la com:
+
+    ```bash
+    git merge --abort
+    ```
+
+Esse comando reverterá o repositório ao estado anterior à tentativa de mesclagem.
+
+### Resumo:
+
+- **`git merge <branch>`**: Mescla o ramo especificado na branch atual.
+- **`--no-ff`**: Cria um commit de merge mesmo que a mesclagem possa ser feita como fast-forward.
+- **`--continue`**: Continua a mesclagem após resolver os conflitos.
+- **`--abort`**: Aborta a mesclagem atual.
+
+O comando `git merge` é essencial para integrar as alterações feitas em diferentes ramos, permitindo que diferentes desenvolvedores trabalhem de forma colaborativa sem sobrescrever o trabalho dos outros.
 
 ## Git pull 
 
@@ -160,4 +166,4 @@ Aqui, o Git irá buscar as alterações do repositório remoto chamado origin. A
 ```sh
 git log origin/main
 ```
-Depois de inspecionar as mudanças, você pode decidir o que fazer: mesclar as alterações, criar um rebase, ou simplesmente deixar como está.
+Depois de inspecionar as mudanças, você pode decidir o que fazer: mesclar as alterações, criar um rebase, ou simplesmente deixar como está
