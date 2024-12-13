@@ -1,4 +1,4 @@
-## Git pull 
+# Git pull 
 
 
 > Descrição: O comando git pull é usado para atualizar o repositório local
@@ -24,7 +24,7 @@ branch: O branch que você deseja atualizar (se não especificado, será o branc
 git pull origin main
 ```
 
-## Git fetch
+# Git fetch
 
 
 > O comando git fetch é usado no Git para atualizar o repositório local com as alterações mais recentes do  > repositório remoto, sem mesclar automaticamente essas alterações no seu branch atual. É uma operação "segura" porque não modifica diretamente os arquivos no seu diretório de trabalho ou interfere com o histórico local.
@@ -39,17 +39,17 @@ O que acontece quando você usa git fetch?
 
 3. Atualiza os branches remotos (por exemplo, origin/main) para refletir o estado mais recente no remoto.
 
-# Diferença entre git fetch e git pull
+## Diferença entre git fetch e git pull
 
-# git fetch: 
+## git fetch: 
 
 Atualiza apenas as informações sobre o estado do repositório remoto, sem alterar o branch local ou os arquivos de trabalho.
 
-# git pull: 
+## git pull: 
 
 Faz um git fetch seguido de um git merge no branch atual, ou seja, tenta integrar automaticamente as mudanças do remoto ao seu branch local.
 
-# Quando usar git fetch?
+## Quando usar git fetch?
 
 Para verificar atualizações no repositório remoto sem impactar o que você está trabalhando localmente.
 
@@ -57,7 +57,7 @@ Antes de decidir mesclar (merge) ou rebasear seu branch com o remoto, para anali
 
 Para verificar se há novos branches ou tags no remoto.
 
-# Exemplo
+## Exemplo
 
 ```sh
 git fetch origin
