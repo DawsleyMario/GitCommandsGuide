@@ -161,5 +161,3 @@ Aqui, o Git irá buscar as alterações do repositório remoto chamado origin. A
 git log origin/main
 ```
 Depois de inspecionar as mudanças, você pode decidir o que fazer: mesclar as alterações, criar um rebase, ou simplesmente deixar como está.
-
-
