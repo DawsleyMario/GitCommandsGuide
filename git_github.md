@@ -19,3 +19,72 @@ O GitHub é uma plataforma baseada na nuvem para hospedagem de repositórios Git
 
 - **Git:** É uma ferramenta de controle de versão que funciona localmente.
 - **GitHub:** É uma plataforma online que utiliza Git para hospedar repositórios.
+
+## Instalação do Git
+
+### Windows
+
+1. Acesse o site oficial do Git: https://git-scm.com/.
+2. Baixe o instalador para Windows.
+3. Execute o instalador e siga as instruções, configurando opções como editor padrão e comportamento do terminal.
+
+### MacOS
+
+1. Instale o Git via [Homebrew](https://brew.sh/):
+
+   ```
+   brew install git
+   ```
+
+2. Verifique a instalação:
+
+   ```
+   git --version
+   ```
+
+### Linux
+
+1. Use o gerenciador de pacotes da sua distribuição:
+
+   - **Ubuntu/Debian:**
+
+     ```
+     sudo apt update
+     sudo apt install git
+     ```
+
+   - **Fedora:**
+
+     ```
+     sudo dnf install git
+     ```
+
+2. Confirme a instalação:
+
+   ```
+   git --version
+   ```
+
+## Configuração inicial do Git
+
+Após instalar o Git, configure seu nome de usuário e e-mail para que suas contribuições sejam corretamente atribuídas:
+
+```
+git config --global user.name "Seu Nome"
+git config --global user.email "seu.email@exemplo.com"
+```
+
+Verifique as configurações:
+
+```
+git config --list
+```
+
+## Criando uma conta no GitHub
+
+1. Acesse https://github.com/.
+2. Clique em **Sign up**.
+3. Preencha os dados solicitados, como e-mail, nome de usuário e senha.
+4. Complete o cadastro e confirme o e-mail.
+
+Agora você está pronto para explorar o Git e o GitHub!
